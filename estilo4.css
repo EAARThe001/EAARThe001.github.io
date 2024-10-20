@@ -1,0 +1,630 @@
+/* Diseño básico de la página */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1a1a4d; /* Color azul oscuro para el fondo */
+    color: white; /* Color del texto general */
+    overflow: hidden; /* Evita el desplazamiento por los globos */
+    position: relative;
+}
+/* Estilo para el encabezado */
+h1 {
+    position: absolute; /* Posición absoluta para superponer el texto */
+    top: 20px; /* Espacio desde la parte superior */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translateX(-50%); /* Ajuste para centrar */
+    font-size: 3em; /* Tamaño del encabezado */
+    color: rgba(248, 248, 244, 0.8); /* Color brillante azul claro con transparencia */
+    text-shadow: 0 0 10px rgba(97, 218, 251, 1), 0 0 20px rgba(97, 218, 251, 1); /* Efecto de brillo */
+    pointer-events: none; /* Para que no interfiera con clics en otros elementos */
+    z-index: 10; /* Aseguramos que esté sobre otros elementos */
+    font-family: Brush Script MT;
+
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    
+    padding: 20px;
+}
+
+.seccion {
+    width: 30%; /* Cada sección ocupa el 30% del ancho */
+    text-align: center;
+}
+
+.izquierda, .derecha {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.centro {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Foto con nota debajo */
+.foto-con-nota {
+    margin-bottom: 20px;
+    display: none; /* Oculto por defecto */
+}
+
+.foto {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para la foto */
+}
+
+.nota-foto {
+    margin-top: 10px;
+    background-color: #fdfdfd9d;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2); /* Sombra */
+    font-size: 18px;
+    font-family: Brush Script MT;
+    color: rgb(250, 250, 250);
+}
+
+/* Código adicional en la izquierda */
+.codigo-regalo {
+    margin-top: 20px;
+    font-size: 48px;
+    cursor: pointer;
+    
+}
+
+/* Base del pastel */
+/* Base del pastel */
+.base-rectangular {
+    position: relative;
+    width: 600px; /* Ancho considerable para abarcar el pastel y los perritos */
+    height: 50px; /* Altura baja */
+    background-color: #ffebcd;
+    border-radius: 25px; /* Bordes redondeados */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    top: 110px;
+}
+
+
+.cake {
+    width: 100%;
+    position: absolute;
+    bottom: 50px;
+}
+
+.bottom-layer,
+.top-layer,
+.middle-layer {
+    height: 80px;
+    width: 240px;
+    position: relative;
+    margin: auto;
+    background-repeat: repeat;
+    background-size: 100% 100%, 60px 100px;
+    background-position: 28px 0;
+    background-image: linear-gradient(transparent 50px, #e3a953 50px, #e3a953 60px, transparent 60px), radial-gradient(circle at 30px 5px, #713e16 30px, #eac284 31px);
+}
+
+.middle-layer {
+    transform: scale(0.85);
+    top: 72px;
+    animation: rise-1 2s forwards;
+}
+
+@keyframes rise-1 {
+    100% {
+        top: 7px;
+    }
+}
+
+.top-layer {
+    transform: scale(0.7);
+    top: 144px;
+    animation: rise-2 2s 2s forwards;
+}
+
+@keyframes rise-2 {
+    100% {
+        top: 26px;
+    }
+}
+
+.candle {
+    background: repeating-linear-gradient(45deg, #fd3018 0, #fd3018 5px, #ffa89e 5px, #ffa89e 10px);
+    height: 45px;
+    width: 15px;
+    position: absolute;
+    margin: auto;
+    left: 7%;
+    transform: translateX(-100%); /* Ajusta para que quede perfectamente centrada */
+    right: 0;
+    bottom: 0;
+    animation: rise-3 1s 4s forwards;
+}
+
+@keyframes rise-3 {
+    100% {
+        bottom: 202px;
+    }
+}
+
+.candle:after {
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    background-color: #ffee54;
+    border-radius: 0 50% 50% 50%;
+    transform: scale(0) rotate(45deg);
+    bottom: 50px;
+    left: -0.5px;
+    animation: flame 1.5s 5s forwards;
+}
+
+@keyframes flame {
+    100% {
+        transform: scale(1) rotate(45deg);
+    }
+}
+
+/* Imagenes de los perritos */
+.perro img {
+    width: 100px; /* Ajusta el tamaño de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+.perro {
+    position: absolute;
+    width: 10px;
+    height: 5px;
+    text-align: center;
+    z-index: 2;
+}
+
+#perroConny {
+    left: -20px; /* A la izquierda sobre la base */
+    bottom: 135px;
+}
+
+#perroHaandy {
+    right: 65px; /* A la izquierda sobre la base */
+    bottom: 135px;
+}
+.perro .nombre {
+    position: absolute;
+    top: -20px; /* Posicionado arriba del perrito */
+    width: 100%;
+    left: 25px;
+    text-align: center;
+    font-size: 18px;
+    font-family: Brush Script MT;
+    color: rgb(255, 255, 255);
+}
+
+.presents {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 200px;
+}
+
+/* Estilos Generales para Presentes */
+.present {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: transform 0.3s;
+}
+
+.present:hover {
+    animation: bounce 0.5s ease-in-out;
+}
+
+/* Lido de la Caja */
+.present .lid {
+    height: 20%;
+    width: calc(100% + 15px);
+    border: 4px solid #2c3a49;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5), inset 0px -2px 5px rgba(255, 255, 255, 0.5); /* Más sombra en la tapa para darle profundidad */
+    position: relative;
+    z-index: 2;
+    background-color: #f75d4c; 
+    top: -0px; /* Ajustamos la posición para que sobresalga más de la caja */
+}
+
+/* Caja del Regalo */
+.present .box {
+    width: 100%;
+    height: 100%;
+    background-size: 40px 40px;
+    border: 4px solid #2c3a49;
+    border-top: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5), inset -10px 5px rgba(0, 0, 0, 0.3); /* Refuerzo de la sombra para profundidad */
+    position: relative;
+    z-index: 1;
+}
+
+/* Cinta del Regalo */
+.present .ribbon {
+    position: absolute;
+    top: -3px;
+    width: 20px;
+    height: calc(100% - 5px);
+    border: 4px solid #2c3a49;
+    border-radius: 5px;
+    box-shadow: inset 0px 2px rgba(255, 255, 255, 0.5);
+    z-index: 3;
+    background-color: #f75d4c; /* Color consistente con el lazo */
+}
+
+/* Lazo del Regalo */
+.present .bow {
+    position: absolute;
+    top: -10px;
+    width: 40px;
+    height: 5px;
+    background: #f75d4c;
+    border: 4px solid #2c3a49;
+    border-radius: 50%;
+    z-index: -1; /* Para que se quede detrás de la caja */
+    box-shadow: inset 0px 2px rgba(0, 0, 0, 0.3);
+}
+
+.present .bow::before,
+.present .bow::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 4px solid #2c3a49;
+    border-radius: 50%;
+    box-shadow: inset 0px 2px rgba(0, 0, 0, 0.3);
+    background: #f75d4c; /* Fondo temporal */
+    z-index: -1; /* Mantenerlos detrás de la caja */
+}
+
+.present .bow::before {
+    top: -13px; /* Posicionar más arriba que el lazo central */
+    left: -24px; /* Ajustar la posición para centrarlos */
+}
+
+.present .bow::after {
+    top: -13px; /* Posicionar más arriba que el lazo central */
+    right: -24px; /* Ajustar la posición para centrarlos */
+}
+
+/* Animación Bounce */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Estilos Específicos por Color */
+
+/* Regalo Naranja */
+.present.orange {
+    width: 130px;
+    height: 120px;
+    z-index: 10;
+}
+
+.present.orange .lid {
+    background: #ffa726;
+}
+
+.present.orange .box {
+    background-color: #ffa726;
+}
+
+.present.orange .ribbon {
+    background: #f75d4c;
+}
+
+.present.orange .bow {
+    background: #f75d4c;
+}
+
+.present.orange .bow::before,
+.present.orange .bow::after {
+    background: #f75d4c;
+}
+
+/* Regalo Verde */
+.present.green {
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+}
+
+.present.green .lid {
+    background: #3ddc81;
+}
+
+.present.green .box {
+    background-color: #3ddc81;
+}
+
+.present.green .ribbon {
+    background: #f75d4c;
+}
+
+.present.green .bow {
+    background: #f75d4c;
+}
+
+.present.green .bow::before,
+.present.green .bow::after {
+    background: #f75d4c;
+}
+
+/* Regalo Azul */
+.present.blue {
+    width: 120px;
+    height: 160px;
+    z-index: 0;
+}
+
+.present.blue .lid {
+    background: #1bb5fe;
+}
+
+.present.blue .box {
+    background-color: #1bb5fe;
+}
+
+.present.blue .ribbon {
+    background: #3ddc81;
+}
+
+.present.blue .bow {
+    background: #3ddc81;
+}
+
+.present.blue .bow::before,
+.present.blue .bow::after {
+    background: #3ddc81;
+}
+
+
+.caja-regalo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 300px; /* Altura de la sección, ajustada para dar más espacio */
+    margin: 0 10px; /* Margen alrededor de la caja de regalo */
+}
+
+
+/* Estilos Generales para Presentes Grandes */
+.present-grande {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    margin: 0 10px; /* Margen alrededor de la caja de regalo */
+    width: 200px; /* Aumentar el ancho de la caja */
+    height: 260px; /* Aumentar la altura de la caja */
+    transition: transform 0.3s; /* Transición suave para el hover */
+}
+
+.present-grande:hover {
+    animation: bounce 0.5s ease-in-out; /* Efecto de animación al pasar el mouse */
+}
+
+/* Tapa del Regalo Grande */
+.present-grande .lid {
+    height: 20%; /* Altura de la tapa */
+    width: calc(100% + 20px); /* Ancho de la tapa, un poco más grande */
+    border: 4px solid #2c3a49; /* Borde de la tapa */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5), inset 0px -2px 5px rgba(255, 255, 255, 0.5); /* Sombra */
+    position: absolute; /* Cambiar a posición absoluta */
+    z-index: 2; /* Asegura que esté por encima del cuerpo del regalo */
+    background-color: #f75d4c; /* Color de la tapa */
+    top: -20%; /* Ajustamos la posición para que sobresalga más de la caja */
+}
+
+/* Caja del Regalo Grande */
+.present-grande .box {
+    width: 100%; /* Ancho de la caja */
+    height: 80%; /* Altura de la caja */
+    background-size: 60px 60px; /* Tamaño de fondo */
+    border: 4px solid #2c3a49; /* Borde de la caja */
+    border-top: 0; /* Sin borde superior */
+    border-bottom-left-radius: 5px; /* Bordes redondeados en la parte inferior izquierda */
+    border-bottom-right-radius: 5px; /* Bordes redondeados en la parte inferior derecha */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5), inset -10px 5px rgba(0, 0, 0, 0.3); /* Sombra */
+    position: relative; /* Mantener la posición relativa */
+    z-index: 1; /* Debajo de la tapa */
+    background-color: #f8f8f8; /* Color de la tapa */
+}
+
+/* Cinta del Regalo Grande */
+.present-grande .ribbon {
+    position: absolute; /* Posición absoluta */
+    top: -53px; /* Ajustar posición en la parte superior */
+    width: 30px; /* Aumentar el ancho de la cinta */
+    height: calc(100% - 5px); /* Aumentar la altura de la cinta */
+    border: 4px solid #2c3a49; /* Borde de la cinta */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: inset 0px 2px rgba(255, 255, 255, 0.5); /* Sombra interior */
+    z-index: 3; /* Encima de la caja */
+    background-color: #f75d4c; /* Color de la cinta */
+}
+
+/* Lazo del Regalo Grande */
+.present-grande .bow {
+    position: absolute; /* Posición absoluta */
+    top: -50px; /* Ajustar la posición del lazo */
+    width: 60px; /* Aumentar el ancho del lazo */
+    height: 10px; /* Aumentar la altura del lazo */
+    background: #f75d4c; /* Color del lazo */
+    border: 4px solid #2c3a49; /* Borde del lazo */
+    border-radius: 50%; /* Bordes redondeados */
+    z-index: -1; /* Detrás de la caja */
+    box-shadow: inset 0px 2px rgba(0, 0, 0, 0.3); /* Sombra interior */
+}
+
+.present-grande .bow::before,
+.present-grande .bow::after {
+    content: ""; /* Contenido vacío para los pseudo-elementos */
+    position: absolute; /* Posición absoluta */
+    width: 50px; /* Aumentar el ancho de los extremos del lazo */
+    height: 50px; /* Aumentar el alto de los extremos del lazo */
+    border: 4px solid #2c3a49; /* Borde de los extremos del lazo */
+    border-radius: 50%; /* Hacer que sean circulares */
+    box-shadow: inset 0px 2px rgba(0, 0, 0, 0.3); /* Sombra */
+    background: #f75d4c; /* Fondo consistente */
+    z-index: -1; /* Mantener detrás de la caja */
+}
+
+.present-grande .bow::before {
+    top: -20px; /* Posicionar más arriba que el lazo central */
+    left: -35px; /* Ajustar la posición para centrarlos */
+}
+
+.present-grande .bow::after {
+    top: -20px; /* Posicionar más arriba que el lazo central */
+    right: -35px; /* Ajustar la posición para centrarlos */
+}
+
+/* Animación Bounce */
+@keyframes bounce {
+    0% {
+        transform: translateY(0); /* Comienza en su posición original */
+    }
+    50% {
+        transform: translateY(-20px); /* Salta hacia arriba más alto */
+    }
+    100% {
+        transform: translateY(0); /* Vuelve a su posición original */
+    }
+}
+
+.emoji-regalo {
+    font-size: 40px; /* Tamaño del emoji */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    position: absolute; /* Cambiado a absoluto para posicionarlo sobre la caja */
+    top: -40px; /* Ajusta esta posición para mover el emoji hacia arriba */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Centra el emoji en relación a su propio ancho */
+    z-index: 5; /* Asegura que esté encima de la caja */
+}
+
+.cupon {
+    display: none; /* Oculto por defecto */
+    border: 3px dashed #2c3a49; /* Borde decorativo con estilo discontinuo */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 5px; /* Espaciado interno */
+    background-color: #ffffff39; /* Fondo claro y suave */
+    margin-top: 0px; /* Espaciado encima de la caja de regalo */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+    position: relative; /* Posición relativa para manejar el layout */
+    z-index: 1; /* Detrás del emoji pero delante de la caja */
+    font-family: Brush Script MT;
+    font-size: 25px;
+    top: -40px;
+    
+}
+
+/* Estilos adicionales para el texto dentro del cupón */
+.cupon h2 {
+    color: #ffffff; /* Color del título */
+    margin-bottom: 0px; /* Espacio debajo del título */
+}
+
+.cupon p {
+    color: #ffffff; /* Color del texto */
+    line-height: 0.5; /* Espaciado entre líneas */
+}
+
+/* Agregar un efecto decorativo en el borde */
+.cupon:before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 5px solid #f75d4c; /* Color del borde decorativo */
+    border-radius: 20px; /* Bordes redondeados para el borde decorativo */
+    z-index: -1; /* Detrás del cupón */
+}
+
+.globos-container {
+    position: fixed; /* Para que floten sobre el fondo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Para que no interfiera con la interacción */
+}
+
+.globo {
+    position: absolute;
+    border-radius: 50%;
+    width: 50px; /* Ajusta el tamaño del globo */
+    height: 70px; /* Ajusta el tamaño del globo */
+    opacity: 0.7; /* Aumenta la transparencia */
+    animation: mover 2s ease-in-out infinite; /* Animación de movimiento */
+}
+
+.globo::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 40px; /* Ajusta la longitud de la soga */
+    background-color: #000; /* Color de la soga */
+    bottom: -40px; /* Ajustar para que parezca que cuelga del globo */
+    left: 50%;
+    transform: translateX(-50%);
+}
+@keyframes mover {
+    0% {
+        transform: translateY(0); /* Inicio en la posición original */
+    }
+    50% {
+        transform: translateY(-10px); /* Subir 10px */
+    }
+    100% {
+        transform: translateY(0); /* Volver a la posición original */
+    }
+}
+.soga {
+    position: absolute;
+    width: 2px; /* Ancho de la soga */
+    height: 50px; /* Altura de la soga */
+    background-color: white; /* Color blanco */
+    bottom: 0; /* Ajustar al fondo del globo */
+    left: 50%; /* Centrando la soga */
+    transform: translateX(-50%); /* Para centrar la soga */
+}

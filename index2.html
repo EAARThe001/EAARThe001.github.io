@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Card</title>
+    <link rel="stylesheet" href="estilo2.css">
+</head>
+<body>
+    <div class="party-background"> <!-- Agregamos los globos, confetti y banderines aquí -->
+        <div class="balloons"></div>
+        <div class="confetti"></div>
+        
+    </div>
+
+    <div class="container">
+        <div class="birthdayCard">
+            <div class="cardFront">
+                <div class="front-text">
+                    <h3 class="happy">HAPPY</h3>
+                    <h2 class="bday">BIRTHDAY</h2>
+                    <h3 class="toyou">to you!</h3>
+                </div>
+                <div class="wrap-deco">
+                    <div class="decorations"></div>
+                    <div class="decorationsTwo"></div>
+                </div>
+                <div class="wrap-decoTwo">
+                    <div class="decorations"></div>
+                    <div class="decorationsThree"></div>
+                </div>
+                <div class="plate">
+                    <div class="cake"></div>
+                    <div class="flame"></div>
+                </div>
+            </div>
+            <div class="cardInside">
+                <div class="inside-text">
+                    <h3 class="happyInside">Happy Birthday to You!</h3>
+                </div>
+                <div class="wishes">
+                    <p>¡Feliz cumpleaños, Anahí! 🎉</p>
+                    <p> Este día es súper importante para mí, porque sin él nunca te habría conocido, y no me gustaría ni imaginar eso. Eres una persona increíble, y me siento muy afortunado de tenerte en mi vida. Aprecio muchísimo todo lo que compartimos, te quiero y admiro un montón. ¡Que este día esté lleno de alegría, risas, y de todo lo bueno que mereces! 😊</p>
+                    <p class="name">~ Alejo</p>
+                </div>
+            </div>
+        </div>
+        <div class="right-section">
+            <!-- Cintas y lazo -->
+    <div class="ribbon-horizontal"></div>
+    <div class="ribbon-vertical"></div>
+    <div class="bow">
+        <div class="knot"></div>
+    </div>
+
+    <!-- Aquí tu contenido ya existente -->
+            <!-- Aquí puedes agregar lo que desees en la parte derecha -->
+            <button class="button" id="videoButton" >
+                🎁 
+            </button>
+            <div id="videoContainer">
+                <button id="funnyButton" class="button" style="display: none;">
+                    😂 Press here! 
+                </button>
+                <div id="cloudMessage" class="cloud" style="display: none;">
+                    No grabamos lo que nos caímos. 😂
+                </div>
+                <video id="birthdayVideo" width="100%" controls muted>
+                    <source src="tu_video.mp4" type="video/mp4">
+                    Tu navegador no soporta el video.
+                </video>
+                
+            </div>
+            
+            <div class="message">
+                    <p id="messageText"></p>
+                
+            </div>
+        </div>
+    </div>
+    
+    <script src="script2.js"></script>
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="cumplec.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+    <a onclick="window.location.href='index3.html'" class="link-button">Por Aquí!!! 🎉</a>
+</body>
+</html>

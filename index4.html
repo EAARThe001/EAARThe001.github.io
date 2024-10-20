@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños Anahí</title>
+    <link rel="stylesheet" href="estilo4.css">
+</head>
+<body>
+    <h1>Feliz Cumpleaños Anahí</h1><br>
+    <div class="globos-container"></div>
+    <div class="container">
+        <!-- Sección izquierda (ícono de regalo y foto con nota) -->
+        <div class="seccion izquierda">
+            <!-- Ícono del regalo que abre la imagen con nota -->
+            <div class="codigo-regalo">
+                <span class="icono-regalo"   onclick="mostrarFotoNota()">🎁</span>
+            </div>
+            
+            <!-- Foto con la nota debajo, inicialmente oculta -->
+            <div class="foto-con-nota" id="fotoNota" style="display: none;">
+                <img src="tu_imagen.jpg" alt="Foto" class="foto">
+                <div class="nota-foto" >¡Necesitamos más fotos juntos señorita cumpleañera! 😁</div>
+            </div>
+            
+            <!-- Código de los regalos acoplado aquí -->
+            <div class="presents-container">
+                <div class="text"></div>
+                <div class="presents">
+                    <div class="present orange">
+                        <div class="lid"></div>
+                        <div class="box"></div>
+                        <div class="bow"></div>
+                        <div class="ribbon"></div>
+                    </div>
+                    <div class="present blue">
+                        <div class="lid"></div>
+                        <div class="box"></div>
+                        <div class="bow"></div>
+                        <div class="ribbon"></div>
+                    </div>
+                    <div class="present green">
+                        <div class="lid"></div>
+                        <div class="box"></div>
+                        <div class="bow"></div>
+                        <div class="ribbon"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección central (mesa con el nuevo pastel) -->
+        <div class="seccion centro">
+            <div class="base-rectangular">
+                <!-- Pastel -->
+                <div class="cake">
+                    <div class="candle"></div>
+                    <div class="top-layer"></div>
+                    <div class="middle-layer"></div>
+                    <div class="bottom-layer"></div>
+                </div>
+            
+                <!-- Perritos con nombres -->
+                <div class="perro" id="perroHaandy">
+                    <div class="nombre">Haandy</div>
+                    <img src="haandy.png" alt="Haandy">
+                </div>
+                <div class="perro" id="perroConny">
+                    <div class="nombre">Conny</div>
+                    <img src="conny.png" alt="Conny">
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección derecha (caja de regalo con cupón) -->
+        <div class="seccion derecha">
+            <div class="caja-regalo">
+                <div class="present-grande">
+                    <div class="lid"></div>
+                    <div class="box"></div>
+                    <div class="bow"></div>
+                    <div class="ribbon"></div>
+                </div>
+                <span class="emoji-regalo" onclick="toggleCupon()">🎁</span> <!-- Emoji de regalo -->
+            </div>
+            <div class="cupon" id="cupon" style="display: none;">
+                <h2>¡Cupón Especial! 🎉</h2>
+                    <p>Este vale por 3 pedidos para lo que quieras: favores, compañía, o cualquier ocurrencia</p>
+                    <p> (¡dentro de lo razonable, claro! 😜).</p>
+                    <p>Úsalo sabiamente, solo se puede gastar hasta 3 veces, así que elige bien. 😄</p>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Librería mo.js desde CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>
+    <script src="script4.js"></script>
+</body>
+</html>

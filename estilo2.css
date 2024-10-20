@@ -1,0 +1,489 @@
+body {
+    height: 96vh;
+    background-image: url('background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    display: flex;
+    justify-content: left;
+    align-items:center;
+    padding-left: 300px; /* Ajusta la distancia de la tarjeta al borde izquierdo */
+    padding-right: 300px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; /* Espacio entre la tarjeta y la sección derecha */
+    width: 100%;
+    padding-top:  150px;
+    padding-bottom: 25px;
+}
+
+.birthdayCard {
+    align-items:center;
+    position: relative;
+    width: 250px;
+    height: 350px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform: perspective(2500px);
+    transition: 4s;
+}
+
+.birthdayCard:hover {
+    transform: perspective(2500px) rotate(5deg);
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .15), 0 10px 100px rgba(0, 0, 0, 0.3);
+}
+
+.birthdayCard:hover .cardFront {
+    transform: rotateY(-160deg);
+}
+
+.birthdayCard:hover .front-text {
+    display: none;
+}
+
+.birthdayCard:hover .wrap-deco {
+    display: none;
+}
+
+.birthdayCard:hover .wrap-decoTwo {
+    display: none;
+}
+
+.birthdayCard:hover .plate {
+    display: none;
+}
+
+.cardFront {
+    position: relative;
+    background-color: #fff;
+    width: 250px;
+    height: 350px;
+    overflow: hidden;
+    transform-origin: left;
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .13), 30px 0 50px rgba(0, 0, 0, 0.1);
+    transition: .4s;
+}
+
+.happy,
+.toyou {
+    position: relative;
+    font-family: Brush Script MT;
+    text-align: center;
+    backface-visibility: hidden;
+    font-size: 30px;
+}
+
+.happy {
+    top: 198px;
+}
+
+.toyou {
+    top: 123px;
+}
+
+.bday {
+    position: relative;
+    font-family: Brush Script MT;
+    font-size: 35px;
+    text-align: center;
+    top: 163px;
+}
+
+.wrap-deco {
+    position: absolute;
+    top: -230px;
+    left: -200px;
+}
+
+.decorations {
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    border: 3px solid #333;
+    border-radius: 50%;
+}
+.decorations:before,
+.decorations:after,
+.decorationsTwo:before,
+.decorationsTwo:after,
+.decorationsThree:before,
+.decorationsThree:after {
+    content: "";
+    position: absolute;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    width: 0;
+    height: 0;
+}
+.decorations:before {
+    border-top: 40px solid #f15bb5;
+    top: 297px;
+    left: 210px;
+    transform: rotate(-5deg);
+}
+
+.decorations:after {
+    border-top: 40px solid #f4d35e;
+    top: 288px;
+    left: 260px;
+    transform: rotate(-17deg);
+}
+.decorationsTwo:before {
+    border-top: 40px solid #00f5d4;
+    top: 268px;
+    left: 315px;
+    transform: rotate(-30deg);
+}
+.decorationsTwo:after,
+.decorationsThree:after {
+    border-top: 40px solid #9b5de5;
+    top: 238px;
+    left: 355px;
+    transform: rotate(-40deg);
+}
+.wrap-decoTwo {
+    transform: scaleX(-1);
+    position: absolute;
+    top: -230px;
+    left: 445px;
+}
+.decorationsThree:before {
+    border-top: 40px solid #00bbf9;
+    top: 268px;
+    left: 315px;
+    transform: rotate(-30deg);
+}
+.plate {
+    position: absolute;
+    width: 130px;
+    height: 5px;
+    background-color: #00bbf9;
+    left: 60px;
+    top: 213px;
+}
+
+.cake {
+    position: absolute;
+    overflow: hidden;
+    width: 100px;
+    height: 50px;
+    background-color: #f15bb5;
+    border-radius: 10px 10px 0 0;
+    top: -50px;
+    left: 15px;
+    box-shadow: inset 0 -15px #f9c74f, inset 0 15px #432818;
+}
+.cake:before {
+    content: "";
+    position: absolute;
+    background-color: #432818;
+    width: 10px;
+    height: 20px;
+    top: 5px;
+    border-radius: 20px;
+    box-shadow: 10px 5px #f15bb5, 20px 0px #432818, 30px 2px #f15bb5, 40px 5px #432818, 50px 5px #f15bb5, 60px 0px #432818, 70px 5px #f15bb5, 80px 5px #432818, 90px 5px #f15bb5;
+}
+.plate:before {
+    content: "";
+    position: absolute;
+    background: repeating-linear-gradient(-45deg, #9b5de5, #9b5de5 3px, #00f5d4 3px, #00f5d4 6px);
+    width: 7px;
+    height: 25px;
+    top: -75px;
+    left: 61px;
+}
+.plate:after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 5px;
+    background-color: #333;
+    top: -80px;
+    left: 64px;
+}
+
+
+.flame {
+    position: absolute;
+    background-color: #fb5607;
+    border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+    transform: rotate(-45deg);
+    width: 15px;
+    height: 15px;
+    opacity: 0.7;
+    top: -93px;
+    left: 57px;
+}
+
+.cardInside {
+    position: absolute;
+    background-color: #fff;
+    width: 250px;
+    height: 350px;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
+}
+.inside-text {
+    position: relative;
+    top: -10px;
+    text-align: center;
+}
+.happyInside {
+    font-family: Brush Script MT;
+    font-size: 25px;
+    color: #f15bb5;
+    margin-bottom: 0px;
+}
+.wishes {
+    position: relative;
+    top: -20px; /* Ajuste de posición para centrado del mensaje */
+    margin: 13px;
+    font-size: 17.7px;
+}
+
+p {
+    font-family: 'Brush Script MT', cursive;
+    color: #333;
+}
+
+.name {
+    margin-left: 150px;
+}
+
+.right-section {
+    width: 60%; /* Ajusta el ancho de la sección derecha */
+    min-height: 100px;
+    background-color: #fff; /* Fondo para distinguir */
+    border: 4px solid #e57373; /* Bordes para simular la caja */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    flex-direction: column; /* Cambiar a columna para apilar elementos */
+    align-items: center;
+    justify-content: flex-start;
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 15px;
+    position: relative;
+    text-align: center;
+    z-index: 2; /* Asegura que el contenido esté por encima de las cintas */
+}
+/* Cinta horizontal (parte del regalo) */
+.ribbon-horizontal {
+    position: absolute;
+    top: 50%; /* Centrado vertical */
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #f06292; /* Color de la cinta */
+    transform: translateY(-50%);
+    z-index: 0; /* Asegura que esté sobre la caja */
+}
+
+/* Cinta vertical (parte del regalo) */
+.ribbon-vertical {
+    position: absolute;
+    left: 50%; /* Centrado horizontal */
+    top: 0;
+    width: 30px;
+    height: 100%;
+    background-color: #f06292; /* Color de la cinta */
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+/* Lazo en la parte superior del regalo */
+.bow {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: #f06292;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Círculos simulando el lazo */
+.bow::before, .bow::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #f06292;
+    border-radius: 50%;
+}
+
+.bow::before {
+    left: -40px;
+}
+
+.bow::after {
+    right: -40px;
+}
+
+/* Nudo del lazo */
+.bow .knot {
+    width: 20px;
+    height: 20px;
+    background-color: #d81b60;
+    border-radius: 50%;
+    z-index: 3;
+}
+#videoContainer {
+   
+    overflow: hidden; /* Evita el desbordamiento */
+    display: none; /* Oculto por defecto */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px; /* Espaciado entre el botón y el video */
+    opacity: 0; /* Oculto por defecto */
+    transition: opacity 0.5s ease; /* Transición de opacidad */
+    position: relative;
+}
+
+#birthdayVideo {
+    max-width: 50%; /* El video ocupa todo el ancho del contenedor */
+    height: auto; /* La altura se ajusta automáticamente */
+}
+#messageText {
+    margin-top: 20px; /* Espaciado superior para la nota */
+    opacity: 1; /* Asegúrate de que sea visible */
+    transition: opacity 1s ease; /* Transición de opacidad */
+    white-space: pre-wrap; /* Para que se mantengan los saltos de línea */
+    font-size: 20px; /* Aumenta el tamaño de la fuente */
+    z-index: 2;
+    position: relative;
+}
+
+.cloud {
+    display: none; /* Ocultar por defecto */
+    position: relative;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #ffffff00;
+    border-radius: 10px;
+    border: 1px hidden #ccccccec;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.097);
+    max-width: 300px;
+    font-family: Brush Script MT;
+    font-size: 20px;
+}
+.cloud:before {
+    content: '';
+    position: absolute;
+    top: -20px; /* Ajusta la posición de la nube */
+    left: 50%; /* Centrado horizontal */
+    transform: translateX(-50%); /* Centro la nube */
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent transparent rgba(0, 0, 0, 0.137) transparent; /* Forma de la nube */
+}
+.button {
+    display: flex;
+    font-family: Brush Script MT;
+    align-items: center; /* Centra verticalmente */
+    cursor: pointer;
+    background-color: #f0f0f000;
+    border: 2px solid #eb9efe6e;
+    border-radius: 8px;
+    padding: 1px 15px;
+    margin-top: px; /* Espaciado superior para los botones */
+    font-size: 20px;
+    position: relative;
+    z-index: 1;
+}
+.emoji {
+    margin-left: 5px; /* Espaciado entre el texto y el emoji */
+}
+.button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Fondo animado con globos, confetti y banderines */
+.party-background {
+    position: fixed; /* Asegura que siempre esté en el fondo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Permite que los elementos sean visibles pero no interactivos */
+    z-index: -1; /* Mantiene los GIFs detrás del contenido */
+}
+
+/* Globos flotando */
+.balloons {
+    background-image: url('globos.gif'); /* Ruta de tu archivo GIF */
+    background-repeat: repeat;
+    background-size: 150px 150px; /* Ajusta el tamaño del GIF */
+    width: 100%;
+    height: 100%;
+    animation: floatBalloons 12s infinite linear; /* Animación de los globos */
+    opacity: 0.8; /* Para que los globos sean sutiles */
+}
+
+/* Confetti cayendo */
+.confetti {
+    background-image: url('confetti.gif'); /* Ruta de tu archivo GIF */
+    background-repeat: repeat;
+    background-size: 100px 100px; /* Ajusta el tamaño del confetti */
+    width: 100%;
+    height: 100%;
+    animation: fallConfetti 8s infinite linear; /* Animación del confetti */
+    opacity: 0.7; /* Para que el confetti no sea abrumador */
+}
+
+/* Banderines en la parte superior */
+.banners {
+    background-image: url('banderines.png'); /* Ruta de la imagen de banderines */
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
+    width: 100%;
+    height: 150px; /* Altura ajustada para banderines */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0; /* Asegura que esté sobre los globos y confetti pero debajo del contenido */
+}
+
+/* Animación de los globos que flotan */
+@keyframes floatBalloons {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+/* Animación de confetti cayendo */
+@keyframes fallConfetti {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+.link-button {
+    position: fixed; /* Fija el botón en la esquina */
+    bottom: 20px; /* Distancia desde el fondo */
+    right: 20px; /* Distancia desde la derecha */
+    padding: 10px 15px; /* Espaciado interno del botón */
+    font-size: 18px; /* Tamaño de la fuente */
+    color: #fff; /* Color del texto */
+    background-color: rgba(0, 0, 0, 0.3); /* Fondo semi-transparente */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición suave para el fondo */
+    font-family: Brush Script MT;
+}
+
+.link-button:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* Cambia el fondo al pasar el ratón */
+}
